@@ -1,2 +1,35 @@
 /* some style */
 
+body {
+  background-color: #000057;
+  font-family: sans-serif;
+  color: white;
+}
+
+h1 {
+  color: #DF0101;
+  font-size: 48pt;
+}
+
+p {
+  font-size: 30pt;
+}
+
+.container {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  text-align: center;
+}
