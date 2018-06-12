@@ -6,8 +6,8 @@
 
 (defonce state (atom {}))
 
-(defn hello-world []
+(defn main-presentation []
   (ps/display ps/title-slide))
 
-(reagent/render-component [hello-world]
+(reagent/render-component [main-presentation]
                           (.getElementById js/document "app"))
