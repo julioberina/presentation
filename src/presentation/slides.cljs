@@ -27,7 +27,17 @@
   [:div
    [:h1 "Why Clojure?"]])
 
+(defn clojure-reasons-slide []
+  [:div
+   [:h1 "Because"]
+   [:ul
+    [:li "(+ FP Lisp)"]
+    [:li "Hosted on JVM"]
+    [:li "Concurrent Programming"]
+    [:li "Can run on browsers (Clojurescript)"]
+    [:li "Cool projects"]]])
+
 ;; Vector of slides
 
 (def slide-vector
-  (atom (vector title-slide why-clojure-slide)))
+  (atom (vector title-slide why-clojure-slide clojure-reasons-slide)))
