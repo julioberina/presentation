@@ -37,7 +37,16 @@
     [:li "Can run on browsers (Clojurescript)"]
     [:li "Cool projects"]]])
 
+(defn implementations-slide []
+  [:div
+   [:h1 "Implementations"]
+   [:ul
+    [:li "Clojure (most common)"]
+    [:li "Clojurescript (Google Closure, Clojurescript -> Optimized Javascript)"]
+    [:li "ClojureCLR (used for certain tools like Arcadia)"]]])
+
 ;; Vector of slides
 
 (def slide-vector
-  (atom (vector title-slide why-clojure-slide clojure-reasons-slide)))
+  (atom (vector title-slide why-clojure-slide clojure-reasons-slide
+                implementations-slide)))
