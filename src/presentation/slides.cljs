@@ -45,8 +45,20 @@
     [:li "Clojurescript (Google Closure, Clojurescript -> Optimized Javascript)"]
     [:li "ClojureCLR (used for certain tools like Arcadia)"]]])
 
+(defn datatypes-slide []
+  [:div
+   [:h1 "Clojure's Data Types"]
+   [:ul
+    [:li "Integers - 4 32 -18 -224 1088 82938748 ..."]
+    [:li "BigIntegers - 45737283472392938472712849213830N"]
+    [:li "Doubles - 8.342 1.234   BigDecimal - 9.234M"]
+    [:li "Ratios - 22/7 9/17 2/3"]
+    [:li "Strings - \"foo\" \"bar\" \"baz\"     Characters - \\a \\b \\c"]
+    [:li "Symbols - foo bar          Keywords - :foo :bar"]
+    [:li "Booleans - true false         Regex - #\"\\w+\""]]])
+
 ;; Vector of slides
 
 (def slide-vector
   (atom (vector title-slide why-clojure-slide clojure-reasons-slide
-                implementations-slide)))
+                implementations-slide datatypes-slide)))
