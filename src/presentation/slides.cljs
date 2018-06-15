@@ -61,9 +61,9 @@
   [:div
    [:h1 "Clojure's Data Structures"]
    [:ul
-    [:li "Lists - '(1 2 3) '(foo bar baz)"]
-    [:li "Vectors - [1 2 3] [foo bar baz]"]
-    [:li "Sets - #{1 2 3} #{foo bar baz}"]
+    [:li "Lists - '(1 2 3), '(foo bar baz)"]
+    [:li "Vectors - [1 2 3], [foo bar baz]"]
+    [:li "Sets - #{1 2 3}, #{foo bar baz}"]
     [:li "Maps - {:foo 1, :bar 2, :baz 3}"]]])
 
 ;; Vector of slides
@@ -71,4 +71,3 @@
 (def slide-vector
   (atom (vector title-slide why-clojure-slide clojure-reasons-slide
                 implementations-slide datatypes-slide data-structures-slide)))
-                
