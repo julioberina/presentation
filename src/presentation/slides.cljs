@@ -49,16 +49,26 @@
   [:div
    [:h1 "Clojure's Data Types"]
    [:ul
-    [:li "Integers - 4 32 -18 -224 1088 82938748 ..."]
+    [:li "Integers - 4, 32, -18, -224"]
     [:li "BigIntegers - 45737283472392938472712849213830N"]
-    [:li "Doubles - 8.342 1.234   BigDecimal - 9.234M"]
-    [:li "Ratios - 22/7 9/17 2/3"]
-    [:li "Strings - \"foo\" \"bar\" \"baz\"     Characters - \\a \\b \\c"]
-    [:li "Symbols - foo bar          Keywords - :foo :bar"]
-    [:li "Booleans - true false         Regex - #\"\\w+\""]]])
+    [:li "Doubles - 8.342, 1.234,   BigDecimal - 9.234M"]
+    [:li "Ratios - 22/7, 9/17, 2/3"]
+    [:li "Strings - \"foo\", \"bar\", \"baz\",     Characters - \\a, \\b, \\c"]
+    [:li "Symbols - foo, bar          Keywords - :foo, :bar"]
+    [:li "Booleans - true, false         Regex - #\"\\w+\""]]])
+
+(defn data-structures-slide []
+  [:div
+   [:h1 "Clojure's Data Structures"]
+   [:ul
+    [:li "Lists - '(1 2 3) '(foo bar baz)"]
+    [:li "Vectors - [1 2 3] [foo bar baz]"]
+    [:li "Sets - #{1 2 3} #{foo bar baz}"]
+    [:li "Maps - {:foo 1, :bar 2, :baz 3}"]]])
 
 ;; Vector of slides
 
 (def slide-vector
   (atom (vector title-slide why-clojure-slide clojure-reasons-slide
-                implementations-slide datatypes-slide)))
+                implementations-slide datatypes-slide data-structures-slide)))
+                
