@@ -1,4 +1,13 @@
-(ns presentation.slides)
+(ns presentation.slides
+  (:require [goog.string :as gstr]))
+
+;; Utilities
+
+(defn tab []
+  (gstr/unescapeEntities "&nbsp;&nbsp;&nbsp;&nbsp;"))
+
+(defn stab []
+  (gstr/unescapeEntities "&nbsp;&nbsp;"))
 
 ;; Begin functions to toggle slides
 
@@ -66,8 +75,38 @@
     [:li "Sets - #{1 2 3}, #{foo bar baz}"]
     [:li "Maps - {:foo 1, :bar 2, :baz 3}"]]])
 
+(defn clojure-fn-slide []
+  [:div
+   [:h3 "Clojure makes programming fn"]
+   [:p "It allows for simpler and shorter code"]])
+
+(defn java-sample-1 []
+  [:div.codebox
+   [:code "// Java"] [:br] [:br]
+   [:code "public class StringUtils {"] [:br]
+   [:code (tab) "public static boolean isBlank(final CharSequence str) {"] [:br]
+   [:code (tab) (tab) "int strLen;"] [:br]
+   [:code (tab) (tab) "if (str == null || (strLen = str.length()) == 0) {"] [:br]
+   [:code (tab) (tab) (tab) "return true;"] [:br]
+   [:code (tab) (tab) "}"] [:br]
+   [:code (tab) (tab) "for (int i = 0; i < strLen; i++) {"] [:br]
+   [:code (tab) (tab) (tab) "if (Character.isWhitespace(str.charAt(i)) == false) {"] [:br]
+   [:code (tab) (tab) (tab) (tab) "return false;"] [:br]
+   [:code (tab) (tab) (tab) "}"] [:br]
+   [:code (tab) (tab) "}"] [:br]
+   [:code (tab) (tab) "return true;"] [:br]
+   [:code (tab) "}"] [:br]
+   [:code "}"] [:br]])
+
+(defn clojure-sample-1 []
+  [:div.codebox
+   [:code ";; Clojure"] [:br] [:br]
+   [:code "(defn blank? [somestr]"] [:br]
+   [:code (stab) "(every? #(Character/isWhitespace %) somestr))"] [:br]])
+
 ;; Vector of slides
 
 (def slide-vector
   (atom (vector title-slide why-clojure-slide clojure-reasons-slide
-                implementations-slide datatypes-slide data-structures-slide)))
+                implementations-slide datatypes-slide data-structures-slide
+                clojure-fn-slide java-sample-1 clojure-sample-1)))
