@@ -104,9 +104,41 @@
    [:code "(defn blank? [somestr]"] [:br]
    [:code (stab) "(every? #(Character/isWhitespace %) somestr))"] [:br]])
 
+(defn java-sample-2 []
+  [:div.codebox
+   [:code "// Java"] [:br] [:br]
+   [:code "public class Person {"] [:br]
+   [:code (tab) "private String fname;"] [:br]
+   [:code (tab) "private String lname;"] [:br] [:br]
+   [:code (tab) "public Person(String fname, String lname) {"] [:br]
+   [:code (tab) (tab) "this.fname = fname;"] [:br]
+   [:code (tab) (tab) "this.lname = lname;"] [:br]
+   [:code (tab) "}"] [:br] [:br]
+   [:code (tab) "public String getFname() { return fname; }"] [:br]
+   [:code (tab) "public String getLname() { return lname; }"] [:br] [:br]
+   [:code (tab) "public void setFname(String fname) {"] [:br]
+   [:code (tab) (tab) "this.fname = fname;"] [:br]
+   [:code (tab) "}"] [:br] [:br]
+   [:code (tab) "public void setLname(String lname) {"] [:br]
+   [:code (tab) (tab) "this.lname = lname;"] [:br]
+   [:code (tab) "}"] [:br]
+   [:code "}"]])
+
+(defn clojure-sample-2 []
+  [:div.codebox
+   [:code ";; Clojure"] [:br] [:br]
+   [:code "(defrecord Person [fname lname])"] [:br] [:br]
+   [:code "(def person (->Person \"Julio\" \"Berina\"))"] [:br]
+   [:code "-> #'user/person"] [:br] [:br]
+   [:code "(:fname person)"] [:br]
+   [:code "-> Julio"] [:br] [:br]
+   [:code "(assoc person :fname \"James\")"] [:br]
+   [:code "#user.Person{:fname \"James\", :lname \"Berina\"}"]])
+
 ;; Vector of slides
 
 (def slide-vector
   (atom (vector title-slide why-clojure-slide clojure-reasons-slide
                 implementations-slide datatypes-slide data-structures-slide
-                clojure-fn-slide java-sample-1 clojure-sample-1)))
+                clojure-fn-slide java-sample-1 clojure-sample-1
+                java-sample-2 clojure-sample-2)))
