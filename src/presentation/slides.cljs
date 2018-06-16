@@ -9,6 +9,8 @@
 (defn stab []
   (gstr/unescapeEntities "&nbsp;&nbsp;"))
 
+(def bigurl "http://i0.kym-cdn.com/entries/icons/original/000/012/748/circle.jpg")
+
 ;; Begin functions to toggle slides
 
 (defn next-slide [vslides]
@@ -180,7 +182,13 @@
    [:code "(loop [x 0]"] [:br]
    [:code (stab) "(when (< x 10)"] [:br]
    [:code (tab) "(println x)"] [:br]
-   [:code (tab) "(recur (inc x))))"]])
+   [:code (tab) "(recur (inc x)))) ;; Prints 0-9, one-by-one, line-by-line"] [:br] [:br]
+   [:code ";; Map"] [:br]
+   [:code "(map (comp #(/ % 2) inc) [1 3 5 7]) ;; => (1 2 3 4)"] [:br] [:br]
+   [:code ";; Reduce"] [:br]
+   [:code "(reduce + '(10 20 30 40)) ;; => 100"] [:br] [:br]
+   [:code ";; Filter"] [:br]
+   [:code "(filter even? '(28 10 13 99 72)) ;; => (28 10 72)"]])
 
 (defn protocol-slide []
   [:div.codebox
@@ -212,6 +220,12 @@
    [:code (stab) "([a b] (lazy-seq (cons a (fibonacci b (+ a b))))))"] [:br] [:br]
    [:code "(take 10 (fibonacci)) ;; => (1 1 2 3 5 8 13 21 34 55)"]])
 
+(defn examples-of-apps-slide []
+  [:div
+   [:h1 "Examples of Apps"]
+   [:p "I'm a Clojurescript (Reagent) app!"]
+   [:button {:on-click #(js/alert "Clojure(script) Rocks!!!")} "Click Me"]])
+
 ;; Vector of slides
 
 (def slide-vector
@@ -220,4 +234,4 @@
                 clojure-fn-slide java-sample-1 clojure-sample-1
                 java-sample-2 clojure-sample-2 javascript-example
                 clojurescript-example awesome-clojure loop-slide
-                protocol-slide lazy-seq-slide)))
+                protocol-slide lazy-seq-slide examples-of-apps-slide)))

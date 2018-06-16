@@ -64,3 +64,12 @@ ul li {
   font-size: 14pt;
   color: lightgray;
 }
+
+button {
+  width: 150px;
+  height: 70px;
+  opacity: 0.7;
+  border-radius: 30px;
+  font-family: Arial;
+  font-size: 18pt;
+}
