@@ -1,10 +1,6 @@
 # presentation
 
-FIXME: Write a one-line description of your library/project.
-
-## Overview
-
-FIXME: Write a paragraph about the library/project and highlight its goals.
+My slides for introducing Clojure to my local Meetup, Code and Coffee.
 
 ## Setup
 
