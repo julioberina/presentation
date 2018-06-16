@@ -239,6 +239,26 @@
    [:code "(reagent/render-component [counter-component]"] [:br]
    [:code (tab) "(js/document.getElementById \"app\"))"] [:br] [:br]])
 
+(defn demo-slide []
+  [:div
+   [:h1 "Demo"]
+   [:p "Let's create and run a server in Clojure!"]])
+
+(defn resources-slide []
+  [:div
+   [:h1 "Resources"]
+   [:ul
+    [:li "Clojure for the Brave and True by Daniel Higginbotham"]
+    [:li "Programming Clojure 3rd Edition by Alex Miller"]
+    [:li "Living Clojure by Carin Meier"]
+    [:li "Clojure Tutorial - Derek Banas (YouTube)"]
+    [:li "4Clojure.org to work on problems in Clojure"]]])
+
+(defn thank-you-slide []
+  [:div
+   [:h1 "End of talk"]
+   [:p "Thank you everyone!"]])
+
 ;; Vector of slides
 
 (def slide-vector
@@ -248,4 +268,4 @@
                 java-sample-2 clojure-sample-2 javascript-example
                 clojurescript-example awesome-clojure loop-slide
                 protocol-slide lazy-seq-slide examples-of-apps-slide
-                counter-slide)))
+                counter-slide demo-slide resources-slide thank-you-slide)))
