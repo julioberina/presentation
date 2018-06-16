@@ -226,6 +226,19 @@
    [:p "I'm a Clojurescript (Reagent) app!"]
    [:button {:on-click #(js/alert "Clojure(script) Rocks!!!")} "Click Me"]])
 
+(defn counter-slide [counter]
+  [:div.codebox
+   [:code "(require '[reagent.core :as reagent])"] [:br] [:br]
+   [:code "(defn counter-component []"] [:br]
+   [:code (stab) "(let [counter (reagent/atom 0)]"] [:br]
+   [:code (tab) "(fn []"] [:br]
+   [:code (stab) (tab) "[:div"] [:br]
+   [:code (tab) (tab) "[:p @counter]"] [:br]
+   [:code (tab) (tab) "[:button {:on-click #(swap! counter inc)} \"+1\"]"] [:br]
+   [:code (tab) (tab) "[:button {:on-click #(swap! counter dec)} \"-1\"]])))"] [:br] [:br]
+   [:code "(reagent/render-component [counter-component]"] [:br]
+   [:code (tab) "(js/document.getElementById \"app\"))"] [:br] [:br]])
+
 ;; Vector of slides
 
 (def slide-vector
@@ -234,4 +247,5 @@
                 clojure-fn-slide java-sample-1 clojure-sample-1
                 java-sample-2 clojure-sample-2 javascript-example
                 clojurescript-example awesome-clojure loop-slide
-                protocol-slide lazy-seq-slide examples-of-apps-slide)))
+                protocol-slide lazy-seq-slide examples-of-apps-slide
+                counter-slide)))
