@@ -174,6 +174,36 @@
              :width "400" :height "300" :frame-border "0"
              :class "giphy-embed"}]])
 
+(defn loop-slide []
+  [:div.codebox
+   [:code ";; Loop macro"] [:br] [:br]
+   [:code "(loop [x 0]"] [:br]
+   [:code (stab) "(when (< x 10)"] [:br]
+   [:code (tab) "(println x)"] [:br]
+   [:code (tab) "(recur (inc x))))"]])
+
+(defn protocol-slide []
+  [:div.codebox
+   [:code ";; Protocols"] [:br] [:br]
+   [:code "(defprotocol Communicator"] [:br]
+   [:code (stab) "(say-hello [this])"] [:br]
+   [:code (stab) "(say-goodbye [this])"] [:br]
+   [:code (stab) "(say-number [this number]))"] [:br] [:br]
+   [:code "(def white-guy (reify Communicator" [:br]]
+   [:code (stab) "(say-hello [this] (println \"Hello\"))"] [:br]
+   [:code (stab) "(say-goodbye [this] (println \"Goodbye\"))"] [:br]
+   [:code (stab) "(say-number [this number] (println (en number)))))"] [:br] [:br]
+   [:code "(def japanese-guy (reify Communicator" [:br]]
+   [:code (stab) "(say-hello [this] (println \"Konnichiwa\"))"] [:br]
+   [:code (stab) "(say-goodbye [this] (println \"Sayonara\"))"] [:br]
+   [:code (stab) "(say-number [this number] (println (jp number)))))"] [:br] [:br]
+   [:code "(say-hello white-guy) ;; => Hello"] [:br]
+   [:code "(say-goodbye white-guy) ;; => Goodbye"] [:br]
+   [:code "(say-number white-guy 23) ;; => Twenty-three"] [:br] [:br]
+   [:code "(say-hello japanese-guy) ;; => Konnichiwa"] [:br]
+   [:code "(say-goodbye japanese-guy) ;; => Sayonara"] [:br]
+   [:code "(say-number japanese-guy 23) ;; => nijuusan"]])
+
 ;; Vector of slides
 
 (def slide-vector
@@ -181,4 +211,5 @@
                 implementations-slide datatypes-slide data-structures-slide
                 clojure-fn-slide java-sample-1 clojure-sample-1
                 java-sample-2 clojure-sample-2 javascript-example
-                clojurescript-example awesome-clojure)))
+                clojurescript-example awesome-clojure loop-slide
+                protocol-slide)))
