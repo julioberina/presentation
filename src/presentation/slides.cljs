@@ -81,7 +81,7 @@
    [:p "It allows for simpler and shorter code"]])
 
 (defn java-sample-1 []
-  [:div.codebox
+  [:div.borebox
    [:code "// Java"] [:br] [:br]
    [:code "public class StringUtils {"] [:br]
    [:code (tab) "public static boolean isBlank(final CharSequence str) {"] [:br]
@@ -105,7 +105,7 @@
    [:code (stab) "(every? #(Character/isWhitespace %) somestr))"] [:br]])
 
 (defn java-sample-2 []
-  [:div.codebox
+  [:div.borebox
    [:code "// Java"] [:br] [:br]
    [:code "public class Person {"] [:br]
    [:code (tab) "private String fname;"] [:br]
@@ -136,7 +136,7 @@
    [:code "#user.Person{:fname \"James\", :lname \"Berina\"}"]])
 
 (defn javascript-example []
-  [:div.codebox
+  [:div.borebox
    [:code "// React JSX"] [:br] [:br]
    [:code "class ShoppingList extends React.Component {"] [:br]
    [:code (stab) "render() {"] [:br]
@@ -157,7 +157,7 @@
 (defn clojurescript-example []
   [:div.codebox
    [:code ";; Clojurescript (Reagent)"] [:br] [:br]
-   [:code "(defn shopping-list [pname]"]
+   [:code "(defn shopping-list [pname]"] [:br]
    [:code (stab) "[:div {:class-name \"shopping-list\"}"] [:br]
    [:code (tab) "[:h1 (str \"Shopping List for \" pname)]"] [:br]
    [:code (tab) "[:ul"] [:br]

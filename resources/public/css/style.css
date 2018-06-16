@@ -53,3 +53,14 @@ ul li {
   font-size: 14pt;
   color: yellow;
 }
+
+.borebox {
+  width: 750px;
+  background-color: black;
+}
+
+.borebox code {
+  font-family: "Courier New";
+  font-size: 14pt;
+  color: lightgray;
+}
