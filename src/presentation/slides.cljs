@@ -204,6 +204,14 @@
    [:code "(say-goodbye japanese-guy) ;; => Sayonara"] [:br]
    [:code "(say-number japanese-guy 23) ;; => nijuusan"]])
 
+(defn lazy-seq-slide []
+  [:div.codebox
+   [:code ";; Creating a lazy sequence"] [:br] [:br]
+   [:code "(defn fibonacci"] [:br]
+   [:code (stab) "([] (fibonacci 1 1))"] [:br]
+   [:code (stab) "([a b] (lazy-seq (cons a (fibonacci b (+ a b))))))"] [:br] [:br]
+   [:code "(take 10 (fibonacci)) ;; => (1 1 2 3 5 8 13 21 34 55)"]])
+
 ;; Vector of slides
 
 (def slide-vector
@@ -212,4 +220,4 @@
                 clojure-fn-slide java-sample-1 clojure-sample-1
                 java-sample-2 clojure-sample-2 javascript-example
                 clojurescript-example awesome-clojure loop-slide
-                protocol-slide)))
+                protocol-slide lazy-seq-slide)))
