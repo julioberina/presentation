@@ -166,6 +166,14 @@
    [:code (tab) (stab) "[:li \"Oculus\"]"] [:br] [:br]
    [:code ";; Example usage: [shopping-list \"Mark\"]"]])
 
+(defn awesome-clojure []
+  [:div
+   [:h1 "More Clojure Code"]
+   [:p "Awesome Clojure code in the slides ahead"]
+   [:iframe {:src "https://giphy.com/embed/D3OdaKTGlpTBC"
+             :width "400" :height "300" :frame-border "0"
+             :class "giphy-embed"}]])
+
 ;; Vector of slides
 
 (def slide-vector
@@ -173,4 +181,4 @@
                 implementations-slide datatypes-slide data-structures-slide
                 clojure-fn-slide java-sample-1 clojure-sample-1
                 java-sample-2 clojure-sample-2 javascript-example
-                clojurescript-example)))
+                clojurescript-example awesome-clojure)))
