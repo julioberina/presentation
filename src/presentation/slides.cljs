@@ -135,10 +135,42 @@
    [:code "(assoc person :fname \"James\")"] [:br]
    [:code "#user.Person{:fname \"James\", :lname \"Berina\"}"]])
 
+(defn javascript-example []
+  [:div.codebox
+   [:code "// React JSX"] [:br] [:br]
+   [:code "class ShoppingList extends React.Component {"] [:br]
+   [:code (stab) "render() {"] [:br]
+   [:code (stab) (stab) "return ("] [:br]
+   [:code (stab) (stab) (stab) "<div className=\"shopping-list\">"] [:br]
+   [:code (tab) (tab) "<h1>Shopping List for {this.props.name}</h1>"] [:br]
+   [:code (tab) (tab) "<ul>"] [:br]
+   [:code (tab) (tab) (stab) "<li>Instagram</li>"] [:br]
+   [:code (tab) (tab) (stab) "<li>WhatsApp</li>"] [:br]
+   [:code (tab) (tab) (stab) "<li>Oculus</li>"] [:br]
+   [:code (tab) (tab) "</ul>"] [:br]
+   [:code (stab) (stab) (stab) "</div>"] [:br]
+   [:code (stab) (stab) ");"] [:br]
+   [:code (stab) "}"] [:br]
+   [:code "}"] [:br] [:br]
+   [:code "// Example usage: <ShoppingList name=\"Mark\" />"]])
+
+(defn clojurescript-example []
+  [:div.codebox
+   [:code ";; Clojurescript (Reagent)"] [:br] [:br]
+   [:code "(defn shopping-list [pname]"]
+   [:code (stab) "[:div {:class-name \"shopping-list\"}"] [:br]
+   [:code (tab) "[:h1 (str \"Shopping List for \" pname)]"] [:br]
+   [:code (tab) "[:ul"] [:br]
+   [:code (tab) (stab) "[:li \"Instagram\"]"] [:br]
+   [:code (tab) (stab) "[:li \"WhatsApp\"]"] [:br]
+   [:code (tab) (stab) "[:li \"Oculus\"]"] [:br] [:br]
+   [:code ";; Example usage: [shopping-list \"Mark\"]"]])
+
 ;; Vector of slides
 
 (def slide-vector
   (atom (vector title-slide why-clojure-slide clojure-reasons-slide
                 implementations-slide datatypes-slide data-structures-slide
                 clojure-fn-slide java-sample-1 clojure-sample-1
-                java-sample-2 clojure-sample-2)))
+                java-sample-2 clojure-sample-2 javascript-example
+                clojurescript-example)))
