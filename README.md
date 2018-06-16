@@ -25,6 +25,9 @@ To create a production build run:
 
     lein do clean, cljsbuild once min
 
+If you don't have Leiningen, a production build has been made.
+No need to worry about installing Leiningen and/or JVM
+
 And open your browser in `resources/public/index.html`. You will not
 get live reloading, nor a REPL. 
 
